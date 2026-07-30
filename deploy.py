@@ -1004,7 +1004,7 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Forwarded-Prefix /userbase-automation;
-        client_max_body_size 256m;   # DataMart / zone Excel uploads (lakhs of rows)
+        client_max_body_size 512m;   # DataMart / zone Excel uploads (200k rows × 50 cols)
         # run-all processes the whole pipeline synchronously — allow long requests.
         proxy_read_timeout 900s;
         proxy_send_timeout 900s;
